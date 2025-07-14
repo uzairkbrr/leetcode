@@ -6,11 +6,9 @@ class Solution(object):
         :rtype: float
         """
         s = sum(nums[:k])
-        ms = s
-
-        for i in range(k, len(nums)):
-            s = s + nums[i] - nums[i-k]
-            ms = max(ms, s)
-
-        return ms / float(k)
-        
+        m = s
+        for i in range(k,len(nums)):
+            s+=nums[i]-nums[i-k]
+            if s>m:
+                m=s
+        return m/float(k)
