@@ -1,6 +1,6 @@
 # My LeetCode Journey
 
-Welcome to the **My-LeetCode-Journey** repository! This project is dedicated to tracking my progress as I solve LeetCode problems regularly. The aim is to grow as a programmer by improving problem-solving skills, learning new techniques, and staying consistent.
+Welcome to the **LeetCode** repository! This project is dedicated to tracking my progress as I regularly solve LeetCode problems. The goal is to grow as a programmer by enhancing problem-solving skills, acquiring new techniques, and maintaining consistency.
 
 ## About
 
