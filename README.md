@@ -26,7 +26,7 @@ The goal is not perfection but **progress**.
 To view or use the code, clone the repository:
 
 ```bash
-git clone https://github.com/uzairkbrr/LeetCode.git
+git clone https://github.com/uzairkbrr/leetcode.git
 ```
 Then explore the files at your own pace.
 
