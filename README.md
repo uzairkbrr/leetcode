@@ -2,7 +2,8 @@
 Welcome to my **LeetCode** repository! This project is dedicated to tracking my progress as I regularly solve LeetCode problems. The goal is to grow as a programmer by enhancing problem-solving skills, acquiring new techniques, and maintaining consistency.
 
 ## About This Repository
-This repository contains solutions to a wide variety of LeetCode problems. The solutions are added in no specific order — just as I solve them.
+This repository contains solutions to a wide variety of LeetCode problems. The solutions are added in no specific order, just as I solve them.
+
 
 **Key highlights:**
 - Problems range from **Easy** to **Hard** difficulty
