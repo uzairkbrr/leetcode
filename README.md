@@ -24,8 +24,14 @@ To view or use the code, clone the repository:
 
 ```bash
 git clone https://github.com/uzairkbrr/leetcode.git
-cd leetcode
+
 ```
+```bash
+cd leetcode
+
+```
+
+
 
 Then explore the files at your own pace. Each solution includes:
 - Problem description or link
