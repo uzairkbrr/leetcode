@@ -6,9 +6,13 @@ class Solution(object):
         :type z: int
         :rtype: int
         """
-        if abs(x-z) == abs(y-z):
+        
+        one = abs(x-z)
+        two = abs(y-z)
+
+        if one == two:
             return 0
-        elif abs(x-z) < abs(y-z):
+        elif one < two:
             return 1
         else:
             return 2
