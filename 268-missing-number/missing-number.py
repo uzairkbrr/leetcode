@@ -4,11 +4,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+
+        # First Approach
+
         # n = len(nums)
         # for i in range(n + 1):
         #     if i not in nums:
         #         return i
 
+
+        # Second Approach
         n = len(nums)
         # find sum till n;
         expected_sum = n * (n + 1) // 2   
