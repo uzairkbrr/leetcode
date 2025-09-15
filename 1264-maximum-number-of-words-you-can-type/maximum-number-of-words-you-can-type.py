@@ -5,17 +5,22 @@ class Solution(object):
         :type brokenLetters: str
         :rtype: int
         """
+        # # Split the string and store it as words of array
+        # # Iterate through the array of words, and check if there's any broken character/letter in the word. 
 
-        broken = set(brokenLetters)
-        # Split the string and store it as words of array
-        words = text.split()
-        count = 0
-        
-        # Iterate through the array of words, and check if there's any broken character in the word. 
-        for word in words:
-            if all(ch not in broken for ch in word):
-                count += 1
-        
-        return count
+        wordCount = 0
+        for word in text.split():
+            found = False
+            for char in brokenLetters:
+                if char in word:
+                    found = True
+                    break
+            if not found:
+                wordCount += 1
+            
+        return wordCount
+
+
+
 
         
