@@ -5,8 +5,8 @@ class Solution(object):
         :type brokenLetters: str
         :rtype: int
         """
-        # # Split the string and store it as words of array
-        # # Iterate through the array of words, and check if there's any broken character/letter in the word. 
+        # # Split the string and store it as words of array ( words )
+        # # Iterate through words, and check if there's any broken character/letter in the word. 
 
         wordCount = 0
         for word in text.split():
