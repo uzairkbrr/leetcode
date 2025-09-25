@@ -11,7 +11,7 @@
  */
 var oddEvenList = function(head) {
 
-    if (head == null || head.next == null) return head;
+    if (!head|| !head.next) return head;
 
     let odd = head; // First node is odd
     let even = head.next; // second node is even
