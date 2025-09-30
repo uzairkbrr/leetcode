@@ -7,23 +7,41 @@ var lengthOfLastWord = function(s) {
     // return words[words.length - 1].length;
 
 
-    let n = s.length - 1;
-    while (n >= 0) {
-        if (s[n] === " ") {
-            --n;
-        } else {
-            break;
-        }
-    }
+    // 1: Two loop approach
+    // let n = s.length - 1;
+    // while (n >= 0) {
+    //     if (s[n] === " ") {
+    //         --n;
+    //     } else {
+    //         break;
+    //     }
+    // }
 
+    // let length = 0;
+    // while (n >= 0) {
+    //     if (s[n] !== " ") {
+    //         length++;
+    //         --n;
+    //     } else {
+    //         break;
+    //     }
+    // }
+
+    // return length;
+
+
+    // 2: One loop approach
+    let n = s.length - 1;
     let length = 0;
+
     while (n >= 0) {
-        if (s[n] !== " ") {
+        if (s[n] != " ") {
             length++;
-            --n;
-        } else {
+        } else if (length > 0) {
             break;
         }
+
+        n--;
     }
 
     return length;
