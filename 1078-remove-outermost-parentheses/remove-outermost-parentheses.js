@@ -3,18 +3,23 @@
  * @return {string}
  */
 var removeOuterParentheses = function(s) {
-    let result = "";
-    let depth = 0;
-
-    for (let char of s) {
-        if (char === '(') {
-            if (depth > 0) result += char; // only add if not outermost
-            depth++;
-        } else { // char === ')'
-            depth--;
-            if (depth > 0) result += char; // only add if not outermost
+    let stack = [];
+    let answer = '';
+    
+    for (let i=0; i<s.length; i++) {
+        if (s[i] == '(') {
+            stack.push(s[i]);
+            if (stack.length > 1) {
+                answer += s[i];
+            }
+        } else {
+            if (stack.length > 1) {
+                answer += s[i];
+            }
+            stack.pop();
         }
+
     }
 
-    return result;
+    return answer;
 };
