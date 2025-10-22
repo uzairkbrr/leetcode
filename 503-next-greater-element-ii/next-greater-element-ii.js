@@ -43,6 +43,8 @@ var nextGreaterElements = function(nums) {
     let stack = [];
     let answer = Array(n).fill(-1);
 
+    stack.push(nums[n-1]);
+    
     for (let i= (2*n)-2; i >= 0; i--) {
         while (stack.length) {
             let top = stack[stack.length-1];
