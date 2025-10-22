@@ -17,8 +17,8 @@ var nextGreaterElements = function(nums) {
         while (stack.length) {
             let top = stack[stack.length-1];
 
-            if (normalArray[i] < normalArray[top]) {
-                answer[i] = normalArray[top];
+            if (normalArray[i] < top) {
+                answer[i] = top;
                 break;   
             } else {
                 stack.pop();
@@ -30,7 +30,7 @@ var nextGreaterElements = function(nums) {
         //     asnwer[i] = -1;
         // }
 
-        stack.push(i);
+        stack.push(normalArray[i]);
     }
 
     return answer.slice(0,n/2);
