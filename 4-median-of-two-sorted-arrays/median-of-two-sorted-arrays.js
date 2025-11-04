@@ -11,14 +11,10 @@ var findMedianSortedArrays = function(nums1, nums2) {
     let result = 0;
 
     if (arr.length % 2 !== 0) {
-    result = arr[median];
+        result = arr[median];
     } else {
         result = ((arr[median] + arr[median - 1]) / 2)
     }
-
-    console.log("Median: ", median);
-    console.log("Result: ", result);
-    console.log("Arr: ", arr);
 
     return result;
 };
