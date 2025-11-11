@@ -8,7 +8,7 @@ var twoSum = function(numbers, target) {
 
     while(i <= j) {
         if (numbers[i] + numbers[j] === target) {
-            // I need to work with 1 base indexing (so, adding 1 to cover that condition)
+            // I've to work with 1 base indexing (so, adding 1 to cover that condition)
             return [i + 1, j + 1];
         } else if (numbers[i] + numbers[j] > target) {
             j--;
