@@ -7,9 +7,9 @@ var maxArea = function(height) {
     let maxWater = 0;
 
     while (left < right) {
-        let width = right - left;
-        let water = Math.min(height[left], height[right]) * width;
-        maxWater = Math.max(maxWater, water);
+        // formula for finding area;
+        let area = Math.min(height[left], height[right]) * (right - left);
+        maxWater = Math.max(maxWater, area);
 
         if (height[left] < height[right]) {
             left++;
