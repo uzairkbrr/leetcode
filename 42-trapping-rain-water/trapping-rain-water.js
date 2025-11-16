@@ -3,27 +3,22 @@
  * @return {number}
  */
 var trap = function(height) {
-    let maxLeft = [];
-    // First value is my first maximum
+    let n = height.length;
+    
+    let maxLeft = [], maxRight = [];
     maxLeft[0] = height[0];
+    maxRight[n-1] = height[n-1];
 
-    for (let i=1; i<height.length; i++) {
+    for (let i = 1; i < n; i++) {
         maxLeft[i] = Math.max(maxLeft[i-1], height[i]);
-    }
-
-    let maxRight = [];
-    // Last value is my first maximum on the right side
-    maxRight[height.length-1] = height[height.length - 1];
-
-    for (let i=height.length - 2; i >= 0; i--) {
-        maxRight[i] = Math.max(height[i], maxRight[i+1]);
+        maxRight[n-1-i] = Math.max(height[n-1-i], maxRight[n-i])
     }
 
     let answer = 0;
-    for (let i=0; i<height.length; i++) {
-        answer += Math.min(maxLeft[i], maxRight[i]) - height[i];
+    for (let i = 0; i < n; i++) {
+        let waterTrapped = Math.min(maxLeft[i], maxRight[i]) - height[i];
+        answer += Math.max(waterTrapped, 0);
     }
 
     return answer;
-
 };
