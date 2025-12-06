@@ -44,10 +44,17 @@
 
 // Recursive:
 var levelOrder = function(root) {
+
+    if (!root) {
+        return [];
+    }
+
     let answer = [];
 
     const traverse = (current, level) => {
-        if (!current) return; // stop when leaf ends
+        if (!current) {
+            return; // stop when leaf ends
+        }
 
         if (!answer[level]) {
             answer[level] = [];
