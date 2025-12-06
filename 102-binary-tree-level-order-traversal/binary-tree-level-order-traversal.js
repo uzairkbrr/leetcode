@@ -10,31 +10,55 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
+
+//  Iterative:
+// var levelOrder = function(root) {
+//     if (!root) return [];
+
+//     const result = [];
+//     const queue = [root];
+
+//     while (queue.length > 0) {
+//         const levelSize = queue.length;
+//         const level = [];
+
+//         for (let i = 0; i < levelSize; i++) {
+//             const node = queue.shift();
+//             level.push(node.val);
+
+//             if (node.left) {
+//                 queue.push(node.left);
+//             }
+
+//             if (node.right) {
+//                 queue.push(node.right);
+//             }
+//         }
+
+//         result.push(level);
+//     }
+
+//     return result;
+// };
+
+
+// Recursive:
 var levelOrder = function(root) {
-    if (!root) return [];
+    let answer = [];
 
-    const result = [];
-    const queue = [root];
+    const traverse = (current, level) => {
+        if (!current) return; // stop when leaf ends
 
-    while (queue.length > 0) {
-        const levelSize = queue.length;
-        const level = [];
-
-        for (let i = 0; i < levelSize; i++) {
-            const node = queue.shift();
-            level.push(node.val);
-
-            if (node.left) {
-                queue.push(node.left);
-            }
-
-            if (node.right) {
-                queue.push(node.right);
-            }
+        if (!answer[level]) {
+            answer[level] = [];
         }
 
-        result.push(level);
-    }
+        answer[level].push(current.val);
 
-    return result;
+        traverse(current.left, level + 1);
+        traverse(current.right, level + 1);
+    };
+
+    traverse(root, 0);
+    return answer;
 };
