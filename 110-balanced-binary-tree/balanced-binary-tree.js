@@ -11,19 +11,23 @@
  * @return {boolean}
  */
 var isBalanced = function(root) {
-    function check(node) {
-        if (!node) return 0;
 
-        let left = check(node.left);
-        if (left === -1) return -1
+    let answer = true;
+    
+    const calculateHeight = function(current) {
+        if (!current) return 0;
 
-        let right = check(node.right);
-        if (right === -1) return -1;
+        let leftHeight = calculateHeight(current.left);
+        let rightHeight = calculateHeight(current.right);
 
-        if (Math.abs(left - right) > 1) return -1;
+        if (Math.abs(leftHeight - rightHeight) > 1) {
+            answer = answer && false;
+        } 
 
-        return Math.max(left, right) + 1;
+        return 1 + Math.max(leftHeight, rightHeight);
     }
 
-    return check(root) !== -1;
+    calculateHeight(root);
+    return answer;
+
 };
