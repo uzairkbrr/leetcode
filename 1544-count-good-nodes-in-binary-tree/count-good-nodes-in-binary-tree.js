@@ -16,13 +16,13 @@ var goodNodes = function(root) {
     let traverse = (current, maxSeenSoFar) => {
         if (!current) return;
 
-        if (!(maxSeenSoFar > current.val)) {
+        if (maxSeenSoFar <= current.val) {
             answer++;
-            maxSeenSoFar = current.val;
         } 
 
-        current.right && traverse(current.right, maxSeenSoFar);
-        current.left && traverse(current.left, maxSeenSoFar);
+        let max = Math.max(current.val, maxSeenSoFar);
+        current.right && traverse(current.right, max);
+        current.left && traverse(current.left, max);
     }
 
     traverse(root, -Infinity);
